@@ -18,17 +18,17 @@ The server rack in our school's cybersecurity classroom. It runs the projects th
 
 | File | Covers |
 | --- | --- |
-| [docs/hardware.md](docs/hardware.md) | Servers and network gear |
-| [docs/network.md](docs/network.md) | Production vs imaging segments, district network rules |
-| [docs/stardeploy.md](docs/stardeploy.md) | FOG PXE imaging project |
-| [docs/fleet-management.md](docs/fleet-management.md) | Managing laptops after they leave the rack |
-| [docs/web-and-sso.md](docs/web-and-sso.md) | Hosting the public site, SSO options |
-| [docs/storage.md](docs/storage.md) | RAID5 array, Foreign Configuration fix |
-| [docs/management.md](docs/management.md) | iDRAC 7, HTML5 console, IPMI fan control |
-| [docs/proxmox.md](docs/proxmox.md) | Proxmox host setup, DNS fix |
-| [docs/workloads.md](docs/workloads.md) | VMs and services |
-| [docs/troubleshooting.md](docs/troubleshooting.md) | Issues hit and how they were fixed |
-| [docs/roadmap.md](docs/roadmap.md) | What's next |
+| [hardware.md](hardware.md) | Servers and network gear |
+| [network.md](network.md) | Production vs imaging segments, district network rules |
+| [stardeploy.md](stardeploy.md) | FOG PXE imaging project |
+| [fleet-management.md](fleet-management.md) | Managing laptops after they leave the rack |
+| [web-and-sso.md](web-and-sso.md) | Hosting the public site, SSO options |
+| [storage.md](storage.md) | RAID5 array, Foreign Configuration fix |
+| [management.md](management.md) | iDRAC 7, HTML5 console, IPMI fan control |
+| [proxmox.md](proxmox.md) | Proxmox host setup, DNS fix |
+| [workloads.md](workloads.md) | VMs and services |
+| [troubleshooting.md](troubleshooting.md) | Issues hit and how they were fixed |
+| [roadmap.md](roadmap.md) | What's next |
 
 ## Scripts
 
