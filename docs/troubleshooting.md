@@ -25,3 +25,15 @@
 | Google wouldn't publish the OAuth app | Needs homepage + privacy URLs; app name must appear on the homepage | Small about/privacy pages on the SSO hostname |
 | Any MPI program crashes with "illegal instruction" | Distro OpenMPI links libpsm2, which needs AVX2 (these Xeons don't have it) | Build OpenMPI from source without psm2 |
 | PERC "Foreign Configuration" | Existing RAID5 metadata seen as foreign | Import in Ctrl+R ([storage.md](storage.md)) |
+| RDP and Windows Admin Center on the DC very slow | Emulated IDE disk + e1000 NIC, too many vCPUs across sockets, Hyper-V enabled inside the VM | VirtIO disk and NIC, 8 vCPU + NUMA, Hyper-V removed ([proxmox.md](proxmox.md)) |
+| DC's OS disk deleted while moving it from IDE to SCSI | `qm set --delete unusedN` destroys the volume | Restored last night's backup to a temporary VM and reassigned its disk; DC down ~20 min, AD changes since the backup lost ([proxmox.md](proxmox.md)) |
+| Boot Manager 0xc0000225 after moving the disk to SCSI | `vioscsi` installed but never loaded | Back to IDE, add a small SCSI disk, reboot once, then move the boot disk |
+| VirtIO SCSI controller: PnP error code 12 | Hot-added to a running UEFI (q35) VM | Reboot once |
+| ADManager Plus only reachable on the server itself | Not installed as a service (ran only in the RDP session) and no firewall rule | `InstallNTService.bat`, firewall rule for the LAN only |
+| Re-registered laptops didn't join the domain | "Join Domain after deploy" unticked on the laptop group | Tick it; fallback domain-join snapin ([stardeploy.md](stardeploy.md)) |
+| Quick-registered laptops never joined AD or ran snapins | FOG 1.5.10 quick registration only adds the group | Hook plug-in copies the group's AD settings and snapins ([stardeploy.md](stardeploy.md)) |
+| Touchpad dead after imaging | Image lacked the HP Serial IO (I2C) driver | Driver installed by the post-image snapin |
+| Snapin driver installs did nothing | FOG client is 32-bit; 32-bit PowerShell has no `pnputil` | Script relaunches itself in 64-bit PowerShell |
+| PNETLab timed out after SSO | App redirected to its internal address | Extra Apache vhost for the public name ([pnetlab.md](pnetlab.md)) |
+| PNETLab consoles never connected through the tunnel | HTTP/2 broke websockets | Disable HTTP/2 in Apache on the PNETLab VM |
+| A manual backup replaced the nightly one | Manual runs count toward "keep daily" | Mark must-keep backups protected ([storage.md](storage.md)) |
