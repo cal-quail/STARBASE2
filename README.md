@@ -1,4 +1,7 @@
-# STARBASE 2
+# STARBASE 2 <img width="2000" height="361" alt="starbase2-horizontal-dark-bg" src="https://github.com/user-attachments/assets/49e92cf0-167c-482f-912e-f9e41742a0d5" />
+
+
+
 
 The server rack in our school's cybersecurity classroom. It runs the projects the program needs (laptop imaging with StarDeploy, a domain controller, monitoring, single sign-on, fleet management, the public website) plus side projects (a hyperlocal weather simulation, Minecraft), on a two-node Proxmox VE cluster of Dell R720xd servers.
 
