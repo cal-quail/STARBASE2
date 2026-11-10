@@ -56,8 +56,16 @@ Normal HTTP sites work fine through Cloudflare Tunnel. (Headscale's control hand
 | Grafana | Generic OAuth (OIDC) | Admin | Editor | local admin |
 | NetBox | OIDC (python-social-auth) | Superuser | View everything | local admin |
 | Zabbix | SAML, just-in-time user creation | Super admin | User (read-only) | local Admin |
+| PNETLab | Authentik proxy + header SSO ([pnetlab.md](pnetlab.md)) | — | — | PNETLab local admin |
+| iDRAC 7 | AD login over LDAPS (no OIDC/SAML on iDRAC 7) | Administrator | Read Only | `root` |
 
-Still to do: the fan control page, iDRAC (iDRAC 7 has no OIDC/SAML, so AD login over LDAPS), PNETLab, and a friendlier onboarding process.
+Still to do: the fan control page (still behind Cloudflare Access).
+
+### Two kinds of account
+
+- **Rack accounts** live in AD (a script on the DC creates them) and appear in Authentik within the hour. Don't set "must change password at next logon".
+- **STARBASE accounts** (students and public) live **only in Authentik**, never in AD. Public sign-up creates the account **inactive** and notifies the admins, who approve it; invite links create pre-approved accounts. Usernames are limited to letters, digits, `.`, `_` and `-`.
+- Authentik can't create AD users. Its LDAP source only writes passwords back.
 
 ### Google sign-in: link-only, personal accounts
 

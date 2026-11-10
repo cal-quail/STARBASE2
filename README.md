@@ -3,7 +3,7 @@
 
 
 
-The server rack in our school's cybersecurity classroom. It runs the projects the program needs (laptop imaging with StarDeploy, a domain controller, monitoring, single sign-on, fleet management, the public website) plus side projects (a hyperlocal weather simulation, Minecraft), on a two-node Proxmox VE cluster of Dell R720xd servers.
+The server rack in our school's cybersecurity classroom. It runs the projects the program needs (laptop imaging with StarDeploy, a domain controller, monitoring, single sign-on, fleet management, student network labs, the public website) plus side projects (a hyperlocal weather simulation, Minecraft), on a two-node Proxmox VE cluster of Dell R720xd servers.
 
 > **Redaction note:** every IP address, hostname, domain, account name, password and serial number in this repo is a placeholder (`<idrac-ip>`, `<domain>`, `<user>` …). Real values go in a local `.env` file (git-ignored) or the team password vault.
 
@@ -23,13 +23,15 @@ The server rack in our school's cybersecurity classroom. It runs the projects th
 | --- | --- |
 | [hardware.md](docs/hardware.md) | Servers and network gear |
 | [network.md](docs/network.md) | Production vs imaging segments, district network rules |
-| [stardeploy.md](docs/stardeploy.md) | FOG PXE imaging project |
-| [fleet-management.md](docs/fleet-management.md) | Managing laptops after they leave the rack |
+| [stardeploy.md](docs/stardeploy.md) | FOG PXE imaging: one-button imaging, snapins, domain join |
+| [fleet-management.md](docs/fleet-management.md) | Laptops after they leave the rack: Tailscale, domain controller |
 | [web-and-sso.md](docs/web-and-sso.md) | Public site (Caddy + Cloudflare Tunnel), single sign-on (Authentik + AD) |
 | [monitoring.md](docs/monitoring.md) | Zabbix, Prometheus, Grafana and NetBox |
-| [storage.md](docs/storage.md) | RAID5 array, Foreign Configuration fix |
+| [storage.md](docs/storage.md) | RAID5 arrays, nightly backups, Foreign Configuration fix |
 | [management.md](docs/management.md) | iDRAC 7, HTML5 console, IPMI fan control, fan web page |
-| [proxmox.md](docs/proxmox.md) | Proxmox cluster, SSO realm, DNS and gateway fixes |
+| [proxmox.md](docs/proxmox.md) | Proxmox cluster, SSO realm, Windows VMs on VirtIO, single-disk restore |
+| [pnetlab.md](docs/pnetlab.md) | Student network labs, fenced behind SSO |
+| [weather.md](docs/weather.md) | Hyperlocal WRF forecast, radar and nowcast |
 | [workloads.md](docs/workloads.md) | VMs and services |
 | [troubleshooting.md](docs/troubleshooting.md) | Issues hit and how they were fixed |
 | [roadmap.md](docs/roadmap.md) | What's next |

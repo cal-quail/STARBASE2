@@ -31,7 +31,8 @@ Decided and built in October 2026: instead of picking one tool, the rack runs fo
 
 ## Still to do
 
-- [ ] Email alerts (configured, waiting on an app password) and a second alert channel
+- [x] Email alerts (live since October 2026)
+- [ ] A second alert channel, and alerts for failed backups
 - [ ] Windows agent on the domain controller
 - [ ] Management IP + SNMPv3 on the 3750E (needs a console cable)
 - [ ] Off-box copy of the monitoring backups

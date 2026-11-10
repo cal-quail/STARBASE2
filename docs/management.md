@@ -37,6 +37,10 @@ The rack sits in a classroom, so fans have to be quiet during school hours. A sm
 
 Because the page owns the schedule, don't also run cron fan jobs; they'd fight each other. Today the page sits behind Cloudflare Access; it's moving to the rack's [SSO](web-and-sso.md).
 
+## AD logins on iDRAC
+
+iDRAC 7 has no OIDC or SAML, so rack members sign in with their AD account over LDAPS (standard schema, CA certificate validated, DC addressed by FQDN because the certificate has no IP). Rack admins get Administrator and the rest of the team Read Only. The local `root` stays as break-glass. These logins skip the passkey step that the Authentik apps have.
+
 ## Read-only monitoring account
 
 Each iDRAC has a separate IPMI user with USER (read-only) privilege for [monitoring](monitoring.md), so the monitoring VM never holds admin credentials.
